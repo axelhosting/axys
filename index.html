@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Início - AxysPlay</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/mc-sprites.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <!-- Sons -->
+  <audio id="soundClick" src="sounds/click.ogg" preload="auto"></audio>
+  <audio id="soundXP" src="sounds/xp_orb.ogg" preload="auto"></audio>
+  <audio id="soundPling" src="sounds/pling.ogg" preload="auto"></audio>
+  <audio id="soundStep" src="sounds/step_grass.ogg" preload="auto"></audio>
+
+  <header class="header">
+    <nav class="navbar">
+      <a class="active" href="index.html">Início</a>
+      <a href="pages/loja.html">Shop</a>
+      <a href="pages/forum.html">Fórum</a>
+      <a href="pages/novidades.html">Novidades</a>
+      <a href="pages/chat.html">Bate-Papo</a>
+      <a href="pages/suporte.html">Suporte</a>
+    </nav>
+    <div class="banner">
+      <div class="logo">
+        <img src="img/logo.png" alt="AxysPlay Logo">
+      </div>
+      <div class="mascote">
+        <img src="img/mascote.gif" alt="Mascote AxysPlay">
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h1>💜💜💜 AXYS PLAY 💜💜💜</h1>
+    <p class="lead">Servidor Survival com sistema de spawners e muito mais.</p>
+    <div class="ip-card">
+      <span>IP:</span>
+      <strong class="ip">play.axysplay.com</strong>
+      <button class="btn" onclick="copiarIP()">Copiar IP</button>
+      <span id="copy-ip-msg"></span>
+    </div>
+    <div class="cta">
+      <a class="btn" href="pages/loja.html">SHOP</a>
+      <a class="btn" href="pages/chat.html">Sala de Bate-Papo</a>
+      <a class="btn" href="pages/novidades.html">Novidades</a>
+    </div>
+  </section>
+
+  <section class="container">
+    <div class="grid">
+      <div class="card">
+        <h3>SPAWNERS</h3>
+        <p>Sistema de spawners que te permitem farmar itens e ficar rico!</p>
+        <a class="btn" href="pages/novidades.html">Ver Novidades</a>
+      </div>
+      <div class="card">
+        <h3>VIP</h3>
+        <p>Ganhe vantagens dentro do servidor adquirindo nosso vip que conta com diversos benefícios</p>
+        <a class="btn" href="pages/loja.html">Ver Planos</a>
+      </div>
+      <div class="card">
+        <h3>Suporte</h3>
+        <p>Todos nossos players desfrutam de um suporte de ponta</p>
+        <a class="btn" href="pages/forum.html">Abrir Fórum</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">AxysPlay</footer>
+</body>
+</html>
