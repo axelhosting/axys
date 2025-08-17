@@ -1,0 +1,107 @@
+
+:root{
+  --c1:#00eaff;  /* cyan neon */
+  --c2:#3a7bff;  /* blue neon */
+  --c3:#b700ff;  /* purple neon */
+  --bg:#0b0b1a;
+  --card: rgba(255,255,255,.06);
+  --line: rgba(255,255,255,.12);
+}
+*{box-sizing:border-box}
+html,body{
+  margin:0;padding:0;
+  background:
+    radial-gradient(900px 500px at 10% -10%, rgba(183,0,255,.14), transparent 40%),
+    radial-gradient(900px 500px at 90% 10%, rgba(0,234,255,.12), transparent 40%),
+    var(--bg);
+  color:#fff; font-family: "Inter", system-ui, Arial, sans-serif;
+  overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block;image-rendering:pixelated}
+#mc-particles{position:fixed; inset:0; z-index:0; pointer-events:none;}
+
+.header{position:relative; z-index:2}
+.navbar{
+  display:flex; justify-content:center; align-items:center; gap:14px; flex-wrap:wrap;
+  padding:14px 18px; margin-top:10px;
+  background:rgba(10,10,26,.72);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:16px; width:min(1200px,94%); margin-left:auto; margin-right:auto;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 18px rgba(0,234,255,.08), 0 0 22px rgba(183,0,255,.08);
+}
+.navbar a{
+  color:var(--c1); font-weight:900; letter-spacing:.2px;
+  padding:10px 16px; border-radius:14px;
+  border:2px solid rgba(0,234,255,.35);
+  background:linear-gradient(180deg, rgba(0,234,255,.08), rgba(183,0,255,.08));
+  transition:.18s;
+  filter: drop-shadow(0 0 6px var(--c1)) drop-shadow(0 0 10px var(--c3));
+}
+.navbar a:hover, .navbar a.active{
+  color:#fff; border-color:rgba(183,0,255,.9);
+  background:linear-gradient(180deg, rgba(183,0,255,.22), rgba(58,123,255,.18));
+  box-shadow:0 0 12px var(--c1), 0 0 20px var(--c3);
+  transform:translateY(-2px);
+}
+
+.banner{display:flex;align-items:center;justify-content:center;gap:48px;max-width:1200px;margin:28px auto 12px;padding:12px 16px}
+.logo img{width:min(32vw,260px);height:auto;filter: drop-shadow(0 0 10px var(--c3));}
+.mascote img{width:min(30vw,220px);height:auto;animation:float 2.2s infinite ease-in-out, glow 1.6s infinite alternate}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes glow{from{filter:drop-shadow(0 0 10px var(--c1))}to{filter:drop-shadow(0 0 22px var(--c3))}}
+
+.hero{position:relative;z-index:1;text-align:center;margin:6px auto 26px;padding:0 16px}
+.hero h1{font-size:clamp(2rem,4vw,3.2rem);margin:0 0 8px;text-shadow:0 0 18px var(--c3),0 0 22px var(--c2)}
+.lead{opacity:.95;max-width:900px;margin:0 auto 18px}
+.cta{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:12px}
+.btn{
+  display:inline-block;padding:12px 18px;border-radius:14px;color:#fff;font-weight:800;
+  border:2px solid rgba(255,255,255,.15);
+  background:linear-gradient(90deg, var(--c2), var(--c3));
+  transition:.18s; box-shadow:0 10px 28px rgba(0,0,0,.35); cursor:pointer;
+}
+.btn:hover{transform:translateY(-2px); box-shadow:0 0 12px var(--c2), 0 0 18px var(--c3)}
+
+.container{max-width:1100px;margin:0 auto;padding:0 16px 40px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px;text-align:left;box-shadow:inset 0 0 0 1px rgba(255,255,255,.04)}
+.card h3{margin:0 0 8px}
+.footer{opacity:.75;text-align:center;padding:24px 0;border-top:1px solid rgba(255,255,255,.08)}
+
+.banner--internal .logo{display:flex;justify-content:center}
+
+/* Loja */
+.products{margin-top:18px}
+.product{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px;display:flex;flex-direction:column;gap:10px}
+.product .price{font-weight:900;color:var(--c1)}
+.product .buy{align-self:flex-start}
+
+/* Novidades */
+.nov-top{display:flex;justify-content:space-between;align-items:center;margin:8px 0 14px}
+.nov-top h1{margin:0}
+.nov-add{cursor:pointer}
+.posts{display:grid;gap:16px}
+.post{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px}
+.post h4{margin:0 0 6px}
+.post time{opacity:.7;font-size:.9rem}
+
+/* Modal */
+.modal-back{position:fixed;inset:0;background:rgba(0,0,0,.6);display:none;align-items:center;justify-content:center;z-index:10}
+.modal{background:#11142a;border:1px solid var(--line);border-radius:16px;max-width:520px;width:92%;padding:16px}
+.modal h3{margin:0 0 10px}
+.modal label{display:block;margin:8px 0 4px}
+.modal input, .modal textarea{width:100%;padding:10px;border-radius:12px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.06);color:#fff}
+.modal .actions{display:flex;gap:10px;justify-content:flex-end;margin-top:12px}
+
+/* Chat */
+.chat-wrap{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px;display:flex;flex-direction:column;gap:10px}
+.chat-log{height:360px;overflow:auto;background:rgba(0,0,0,.25);border-radius:12px;padding:10px;border:1px solid rgba(255,255,255,.06)}
+.chat-msg{margin:6px 0;padding:8px 10px;background:rgba(58,123,255,.12);border:1px solid rgba(58,123,255,.3);border-radius:12px}
+.chat-input{display:flex;gap:8px}
+.chat-input input{flex:1;padding:10px;border-radius:12px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.06);color:#fff}
+
+/* Copiar IP */
+.ip-card{display:flex;justify-content:center;gap:10px;align-items:center;margin:12px auto 0;padding:10px 14px;border:1px dashed rgba(255,255,255,.22);border-radius:14px;background:rgba(255,255,255,.06)}
+.ip{font-weight:900;color:var(--c1)}

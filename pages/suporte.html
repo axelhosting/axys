@@ -1,0 +1,68 @@
+<!DOCTYPE html><html lang="pt-BR"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Suporte - AxysPlay</title>
+<link rel="stylesheet" href="../css/style.css">
+<script src="../js/mc-sprites.js" defer></script>
+<script src="../js/main.js" defer></script>
+</head><body>
+<!-- Sons -->
+<audio id="soundClick" src="../sounds/click.ogg" preload="auto"></audio>
+<audio id="soundXP" src="../sounds/xp_orb.ogg" preload="auto"></audio>
+<audio id="soundPling" src="../sounds/pling.ogg" preload="auto"></audio>
+<audio id="soundStep" src="../sounds/step_grass.ogg" preload="auto"></audio>
+
+<header class="header">
+  <nav class="navbar">
+    <a class="" href="../index.html">Início</a>
+    <a class="active" href="../pages/loja.html">Shop</a>
+    <a class="" href="../pages/forum.html">Fórum</a>
+    <a class="" href="../pages/novidades.html">J.News</a>
+    <a class="" href="../pages/chat.html">Bate-Papo</a>
+    <a class="" href="../pages/suporte.html">Suporte</a>
+  </nav>
+  <div class="banner banner--internal">
+    <div class="logo"><img src="../img/mascote.gif" alt="AxysPlay Logo"></div>
+    
+  </div>
+</header>
+
+<main class="container">
+  <h1>🛠️ Suporte</h1>
+  <div class="card">
+    <p>Nos envie uma mensagem para que possamos te ajudar! VOCÊ TAMBÈM PODE REPORTAR BUGS POR AQUI!</p>
+    <button class="btn" onclick="document.getElementById('modal-back').style.display='flex'; playSound('soundXP');">ABRIR TICKT</button>
+  </div>
+</main>
+
+<!-- Modal Report -->
+<div class="modal-back" id="modal-back" style="display:none">
+  <div class="modal">
+    <h3>ABRIR TICKT</h3>
+    <form onsubmit="enviarBug(event)">
+      <label for="rnome">NICK</label>
+      <input id="rnome" required>
+      <label for="remail">E-MAIL</label>
+      <input id="remail" type="email" placeholder="devservergit@gmail.com">
+      <label for="rdesc">DETALHES</label>
+      <textarea id="rdesc" rows="5" required></textarea>
+      <div class="actions">
+        <button type="button" class="btn" onclick="document.getElementById('modal-back').style.display='none'">Cancelar</button>
+        <button type="submit" class="btn">Enviar</button>
+      </div>
+    </form>
+  </div>
+</div>
+<script>
+function enviarBug(e){
+  e.preventDefault();
+  const nome = document.getElementById('rnome').value.trim();
+  const email = document.getElementById('remail').value.trim();
+  const desc = document.getElementById('rdesc').value.trim();
+  const assunto = encodeURIComponent('[AxysPlay] Reporte de Bug - ' + nome);
+  const corpo = encodeURIComponent('Nome: ' + nome + '\nEmail: ' + email + '\n\nDescrição:\n' + desc);
+  window.location.href = 'mailto:suporte@axysplay.com?subject=' + assunto + '&body=' + corpo;
+  playSound('soundClick');
+  document.getElementById('modal-back').style.display='none';
+}
+</script>
+<footer class='footer'>AxysPlay</footer></body></html>
